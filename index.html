@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Cosméticos</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/carrusel.css" />
+  <link rel="stylesheet" href="css/carrusel-productos.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+<!-- Bootstrap Bundle JS (incluye Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+ 
+</head>
+<body>
+
+  <!-- Navbar -->
+<div id="navbar-container"></div>
+
+
+
+<!-- Hero Carrusel -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/hero.webp" class="d-block w-100" alt="Primera imagen">
+      <div class="carousel-caption d-none d-md-block text-start">
+        <h1 class="display-4 fw-bold">Descubrí tu belleza natural</h1>
+        <p>Cosmética consciente, natural y con propósito 🌿</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/hero-2.jpg" class="d-block w-100" alt="Segunda imagen">
+      <div class="carousel-caption d-none d-md-block text-start">
+        <h1 class="display-4 fw-bold">Novedades exclusivas</h1>
+        <p>Productos de temporada con ingredientes orgánicos.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/hero-3.jpg" class="d-block w-100" alt="Tercera imagen">
+      <div class="carousel-caption d-none d-md-block text-start">
+        <h1 class="display-4 fw-bold">Regalá cuidado personal</h1>
+        <p>Opciones para vos o tus seres queridos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+
+
+
+<!-- sections/Escaparate.html -->
+<section class="bg-light py-5" id="productos">
+  <div class="container">
+    <h2 class="mb-4 text-center fw-bold">Explorá tu brillo con maquillaje Natura</h2>
+
+    <div class="position-relative">
+      <button class="btn btn-outline-secondary btn-sm scroll-btn start" id="scrollLeft">‹</button>
+
+      <div class="d-flex overflow-auto scroll-container gap-4 px-3" id="productSlider">
+        <!-- Aquí se inyectan los productos dinámicamente -->
+      </div>
+
+      <button class="btn btn-outline-secondary btn-sm scroll-btn end" id="scrollRight">›</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  
+
+<footer id="footer" class="footer bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row text-md-left">
+
+      <!-- Logo y descripción -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">CosmeBelleza</h5>
+        <p>Descubrí tu belleza natural con nuestra línea de cosméticos conscientes, orgánicos y de alta calidad.</p>
+      </div>
+
+      <!-- Enlaces útiles -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">Enlaces</h5>
+        <p><a href="#productos" class="text-white text-decoration-none">Productos</a></p>
+        <p><a href="#contacto" class="text-white text-decoration-none">Contacto</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Términos</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Privacidad</a></p>
+      </div>
+
+      <!-- Contacto -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">Contacto</h5>
+        <p><i class="fas fa-home me-2"></i> San Cristobal, Argentina</p>
+        <p><i class="fas fa-envelope me-2"></i> placeholder@gmail.com</p>
+        <p><i class="fas fa-phone me-2"></i> +54 9 3408 XX-XXXX</p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">Seguinos</h5>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+    </div>
+
+    <hr class="mb-4" />
+
+    <!-- Footer inferior -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">
+          © 2025 <strong>AYLGON COSMETICS</strong>. Todos los derechos reservados.
+        </p>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <p class="text-center text-md-end">
+          Diseñado por <a href="https://github.com/tiagoraminelli" target="_blank" class="text-purple text-decoration-none">Tiago Raminelli - Desarrollo Web</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+   <script src="js/bloqueo-footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navbar.js"></script>
+<script src="js/productos-escaparate.js"></script>
+<script src="js/escaparate.js"></script>
+<script src="js/botones-carrito.js"></script>
+
+</body>
+</html>

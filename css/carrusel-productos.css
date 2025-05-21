@@ -1,0 +1,40 @@
+.scroll-container {
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  padding-block: 1rem;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.card.producto {
+  flex: 0 0 auto;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease;
+}
+.card.producto:hover {
+  transform: scale(1.03);
+  border-color: #0d6efd;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.5rem;
+  background: white;
+}
+.scroll-btn.start {
+  left: 0;
+}
+.scroll-btn.end {
+  right: 0;
+}
+

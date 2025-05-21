@@ -1,0 +1,21 @@
+#heroCarousel {
+  height: 100vh;
+}
+
+#heroCarousel .carousel-item {
+  height: 100vh;
+  position: relative;
+}
+
+#heroCarousel .carousel-item img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-caption {
+  bottom: 20%;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo sutil para el texto */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
