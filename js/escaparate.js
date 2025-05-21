@@ -6,8 +6,8 @@ function crearProductoHTML(producto) {
       <div class="card-body">
         <small class="text-muted">${producto.etiqueta}</small>
         <h6 class="fw-bold mb-1">${producto.titulo}</h6>
-        <span class="badge bg-success mb-1">CUPÓN: ${producto.cupon}</span>
-        <p class="mb-1 text-danger fw-bold">${producto.precio}</p>
+        <span class="badge text-black bg-white mb-1">CUPÓN: ${producto.cupon}</span>
+        <p class="mb-1 text-orange fw-bold">${producto.precio}</p>
         <small class="text-muted">${producto.precioImpuestos}</small>
         <button value="${producto.id}" class="btn btn-sm btn-dark mt-2 w-100">Agregar al carrito</button>
       </div>

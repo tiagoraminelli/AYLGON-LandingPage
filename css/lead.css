@@ -1,0 +1,12 @@
+section.bg-light {
+  background-color: #f8f9fa;
+}
+section h2 {
+  color: #212529;
+}
+section .lead {
+  font-size: 1.1rem;
+}
+.text-orange {
+  color: #fd7e14;
+}   
