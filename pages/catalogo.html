@@ -9,6 +9,11 @@
 
 <!-- Bootstrap Icons (opcional si usás íconos) -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
 
 <!-- Tu CSS personalizado -->
 <link rel="stylesheet" href="../css/navbar-catalogo.css">
@@ -65,9 +70,113 @@
     <section class="catalogo">
       <h2>Catálogo de Productos</h2>
       <div class="productos-container" id="productosContainer"></div>
+      <div class="text-center my-4">
+  <button id="mostrarMasBtn" class="btn btn-outline-purple">Mostrar más</button>
+</div>
     </section>
 
   </div>
+
+
+<section class="bg-white py-4 border-top border-bottom mb-4">
+  <div class="container">
+    <div class="row text-center d-flex justify-content-between">
+      
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="d-flex flex-column align-items-center">
+          <div class="bg-light rounded-circle p-3 mb-2">
+            <i class="bi bi-truck fs-3 text-purple"></i>
+          </div>
+          <h6 class="fw-bold text-purple">ENVÍOS GRATIS</h6>
+          <p class="mb-0 text-muted">A toda la zona en envios minimos de $100.000</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="d-flex flex-column align-items-center">
+          <div class="bg-light rounded-circle p-3 mb-2">
+            <i class="bi bi-credit-card fs-3 text-purple"></i>
+          </div>
+          <h6 class="fw-bold text-purple">Pagá como quieras</h6>
+          <p class="mb-0 text-muted">Consultá los medios de pago haciendo <a href="#" class="text-purple fw-semibold">click aquí</a></p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="d-flex flex-column align-items-center">
+          <div class="bg-light rounded-circle p-3 mb-2">
+            <i class="bi bi-shield-lock fs-3 text-purple"></i>
+          </div>
+          <h6 class="fw-bold text-purple">Comprá con seguridad</h6>
+          <p class="mb-0 text-muted">Tus datos siempre protegidos</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ 
+
+
+<footer id="footer" class="footer bg-dark text-white pt-5 pb-4">
+  <div class="container text-md-left">
+    <div class="row text-md-left">
+
+      <!-- Logo y descripción -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">CosmeBelleza</h5>
+        <p>Descubrí tu belleza natural con nuestra línea de cosméticos conscientes, orgánicos y de alta calidad.</p>
+      </div>
+
+      <!-- Enlaces útiles -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">Enlaces</h5>
+        <p><a href="#productos" class="text-white text-decoration-none">Productos</a></p>
+        <p><a href="#contacto" class="text-white text-decoration-none">Contacto</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Términos</a></p>
+        <p><a href="#" class="text-white text-decoration-none">Privacidad</a></p>
+      </div>
+
+      <!-- Contacto -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">Contacto</h5>
+        <p><i class="fas fa-home me-2"></i> San Cristobal, Argentina</p>
+        <p><i class="fas fa-envelope me-2"></i> placeholder@gmail.com</p>
+        <p><i class="fas fa-phone me-2"></i> +54 9 3408 XX-XXXX</p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold text-purple">Seguinos</h5>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="btn btn-outline-light btn-floating m-1"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
+    </div>
+
+    <hr class="mb-4" />
+
+    <!-- Footer inferior -->
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">
+          © 2025 <strong>AYLGON COSMETICS</strong>. Todos los derechos reservados.
+        </p>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <p class="text-center text-md-end">
+          Diseñado por <a href="https://github.com/tiagoraminelli" target="_blank" class="text-purple text-decoration-none">Tiago Raminelli - Desarrollo Web</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap Bundle con Popper (versión compatible) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="../js/productos.js"></script>
    <script src="../js/catalogo.js"></script>
