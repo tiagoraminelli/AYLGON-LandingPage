@@ -1,0 +1,17 @@
+   .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9 / 16; /* o 1 / 1 si los videos son cuadrados */
+      overflow: hidden;
+      border-radius: 0.5rem;
+    }
+
+    .video-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }

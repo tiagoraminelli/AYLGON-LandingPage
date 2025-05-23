@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </button>
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav ms-auto align-items-center">
+           <li class="nav-item position-relative me-3">
+              <a class="nav-link" href="pages/catalogo.html" id="catalogo-link">
+              Catálogo
+              </a>        
+            </li>
             <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="#footer">Contacto</a></li>
 
@@ -27,15 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <button id="comprar-carrito" class="btn btn-sm btn-success w-100 mt-2">comprar</button>
               </div>
             </li>
-
-            
-
-            <li class="nav-item position-relative">
-              <a class="nav-link" href="#favoritos" id="favoritos-icon">
-                ❤️
-                <span class="badge rounded-pill bg-purple position-absolute top-0 start-100 translate-middle" id="fav-count">0</span>
-              </a>
-            </li>
+          
           </ul>
         </div>
       </div>
