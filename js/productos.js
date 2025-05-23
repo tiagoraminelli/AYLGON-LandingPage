@@ -5,7 +5,8 @@ const productos = [
     descripcion: "Color vibrante y duradero, ideal para todo el día.",
     precio: 2500,
     categoria: "Maquillaje",
-    img: "../img/placeholder.jpg"
+    img: "../img/placeholder.jpg",
+    stock: 10
   },
   {
     id: 2,
@@ -21,7 +22,8 @@ const productos = [
     descripcion: "Aromas suaves con notas florales y frescas.",
     precio: 7200,
     categoria: "Fragancias",
-    img: "../img/placeholder.jpg"
+    img: "../img/placeholder.jpg",
+    stock: 10
   },
   {
     id: 4,
@@ -37,7 +39,8 @@ const productos = [
     descripcion: "Limpieza profunda sin sulfatos.",
     precio: 3500,
     categoria: "Cabello",
-    img: "../img/placeholder.jpg"
+    img: "../img/placeholder.jpg",
+    stock: 10
   }
     ,
     {
@@ -54,7 +57,8 @@ const productos = [
         descripcion: "Hidratación profunda para todo tipo de piel.",
         precio: 3000,
         categoria: "Cuidado corporal",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 8,
@@ -70,7 +74,8 @@ const productos = [
         descripcion: "Relajante y calmante, ideal para aromaterapia.",
         precio: 1500,
         categoria: "Fragancias",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 10,
@@ -86,7 +91,8 @@ const productos = [
         descripcion: "Cobertura perfecta y acabado mate.",
         precio: 4000,
         categoria: "Maquillaje",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 12,
@@ -94,7 +100,8 @@ const productos = [
         descripcion: "Piel suave y renovada con cada uso.",
         precio: 3500,
         categoria: "Cuidado corporal",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 13,
@@ -110,7 +117,8 @@ const productos = [
         descripcion: "Pestañas largas y voluminosas todo el día.",
         precio: 3500,
         categoria: "Maquillaje",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 15,
@@ -126,7 +134,8 @@ const productos = [
         descripcion: "Aromas suaves con notas florales y frescas.",
         precio: 7200,
         categoria: "Fragancias",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 17,
@@ -142,7 +151,8 @@ const productos = [
         descripcion: "Limpieza profunda sin sulfatos.",
         precio: 3500,
         categoria: "Cabello",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 19,
@@ -150,7 +160,8 @@ const productos = [
         descripcion: "Colores intensos y larga duración.",
         precio: 2200,
         categoria: "Maquillaje",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 12
     },
     {
         id: 20,
@@ -166,7 +177,8 @@ const productos = [
         descripcion: "Limpieza suave y efectiva para el rostro.",
         precio: 2800,
         categoria: "Cuidado facial",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10
     },
     {
         id: 22,

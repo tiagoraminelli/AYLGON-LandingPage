@@ -4,6 +4,9 @@ const precioMax = document.getElementById("precioMax");
 const precioMaxValor = document.getElementById("precioMaxValor");
 const botonMostrarMas = document.getElementById("mostrarMasBtn");
 
+// 🛒 Arreglo para guardar productos comprados
+const carrito = [];
+
 let productosFiltrados = []; // Lista tras aplicar filtros
 let productosMostrados = 0;
 const cantidadPorPagina = 10;
@@ -15,13 +18,33 @@ function renderProductos(lista, desde = 0, hasta = cantidadPorPagina) {
     const card = document.createElement("div");
     card.className = "producto-card";
     card.innerHTML = `
-      <img src="${producto.img}" alt="${producto.titulo}" />
-      <h3>${producto.titulo}</h3>
+      <img src="${producto.img}" alt="${(producto.titulo)}" />
+      <h3>${producto.titulo.toUpperCase()}</h3>
       <p class="descripcion">${producto.descripcion}</p>
       <p class="categoria">${producto.categoria}</p>
       <p class="precio">$${producto.precio.toLocaleString()}</p>
-      <button class="btn-comprar">Comprar</button>
+        <p class="stock">Stock: ${producto.stock || "Sin stock"}</p> 
+      <button class="btn-comprar" onclick='agregarAlCarrito(${JSON.stringify(producto)})' data-id="${producto.id}">🛒 Agregar al Carrito</button>
     `;
+
+    // // ✅ Evento para agregar producto al carrito
+    // const btnComprar = card.querySelector(".btn-comprar");
+    // btnComprar.addEventListener("click", () => {
+    //   carrito.push({
+    //     id: producto.id,
+    //     titulo: producto.titulo
+    //   });
+    //   //console.log("🛒 Carrito actual:", carrito);
+    //         // Mostrar mensaje de éxito
+    // //alert(`Producto ${producto.titulo} agregado al carrito.`);
+
+    //   // Actualizar el carrito en el localStorage
+    //     // localStorage.setItem("carrito", JSON.stringify(carrito));
+
+
+
+    // });
+
     fragment.appendChild(card);
   });
 
@@ -45,6 +68,12 @@ function filtrar() {
     (categoria === "todos" || p.categoria === categoria) &&
     p.precio <= precio
   );
+
+  if (productosFiltrados.length === 0) {
+    contenedor.innerHTML = '<p class="no-result">No se encontraron productos que coincidan con los filtros.</p>';
+    botonMostrarMas.style.display = 'none';
+    return;
+  }
 
   contenedor.innerHTML = '';
   productosMostrados = 0;

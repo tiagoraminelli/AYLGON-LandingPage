@@ -49,7 +49,71 @@ body {
 .filtro input[type="range"] {
   width: 100%;
   padding: 5px;
+  
 }
+
+/* Estilo general */
+#precioMax {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+/* Línea cuando se pasa el mouse */
+#precioMax:hover {
+  background: #ccc;
+}
+
+/* Track (la línea de fondo) */
+#precioMax::-webkit-slider-runnable-track {
+  height: 8px;
+  background: #e0d4f7;
+  border-radius: 5px;
+}
+
+#precioMax::-moz-range-track {
+  height: 8px;
+  background: #e0d4f7;
+  border-radius: 5px;
+}
+
+/* Thumb (la bolita) */
+#precioMax::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #9c27b0;
+  cursor: pointer;
+  margin-top: -6px; /* Centrado vertical */
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+#precioMax::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #9c27b0;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Estilo al hacer focus */
+#precioMax:focus::-webkit-slider-thumb {
+  background: #7b1fa2;
+}
+
+#precioMax:focus::-moz-range-thumb {
+  background: #7b1fa2;
+}
+
 
 #precioMaxValor {
   display: block;
@@ -67,7 +131,13 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
+  background: linear-gradient(90deg, #c084fc, #9333ea); /* degradado violeta */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
+
 
 /* 🆕 Limitamos ancho máximo y centramos cards */
 .productos-container {
@@ -118,9 +188,17 @@ body {
   color: #666;
 }
 
+.no-result{
+  text-align: center;
+  font-size: 1.5rem;
+  color: #6f42c1;
+  margin-top: 50px;
+
+}
+
 .categoria {
   font-size: 0.85rem;
-  color: #9c27b0;
+  color: #fd7e14;
   margin-top: 5px;
 }
 
@@ -128,6 +206,24 @@ body {
   font-weight: bold;
   margin: 10px 0;
 }
+
+.stock{
+  font-size: 0.9rem;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.btn-purple {
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #5a33a4;
+  color: white;
+}
+
 
 .btn-comprar {
   background-color: #9c27b0;
