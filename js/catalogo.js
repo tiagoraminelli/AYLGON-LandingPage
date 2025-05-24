@@ -16,16 +16,23 @@ function renderProductos(lista, desde = 0, hasta = cantidadPorPagina) {
 
   lista.slice(desde, hasta).forEach(producto => {
     const card = document.createElement("div");
-    card.className = "producto-card";
-    card.innerHTML = `
-      <img href="#" src="${producto.img}" alt="${(producto.titulo)}" />
-      <h3>${producto.titulo.toUpperCase()}</h3>
+ card.className = "card producto";
+  card.style.maxWidth = "250px";
+
+  card.innerHTML = `
+    <img src="${producto.img}" class="card-img-top" alt="${producto.alt || producto.titulo}">
+    <div class="card-body">
+      <small class="text-muted">${producto.etiqueta || producto.categoria}</small>
+      <h6 class="fw-bold mb-1">${producto.titulo}</h6>
+      ${producto.descuento ? `<span class="badge text-black bg-white mb-1">Descuento: ${producto.descuento}%</span>` : ""}
+      ${producto.cupon ? `<span class="badge text-black bg-white mb-1">CUPÓN: ${producto.cupon}</span>` : ""}
+      <p class="mb-1 text-orange fw-bold">$${producto.precio.toLocaleString()}</p>
+      <small class="text-muted">${producto.precioImpuestos || ""}</small>
       <p class="descripcion">${producto.descripcion}</p>
-      <p class="categoria">${producto.categoria}</p>
-      <p class="precio">$${producto.precio.toLocaleString()}</p>
-        <p class="stock">Stock: ${producto.stock || "Sin stock"}</p> 
-      <button class="btn-comprar" onclick='agregarAlCarrito(${JSON.stringify(producto)})' data-id="${producto.id}">🛒 Agregar al Carrito</button>
-    `;
+      <p class="stock">Stock: ${producto.stock || "Sin stock"}</p>
+      <button value="${producto.id}" class="btn btn-sm btn-dark mt-2 w-100" onclick='agregarAlCarrito(${JSON.stringify(producto)})'>🛒 Agregar al carrito</button>
+    </div>
+  `;
 
     // // ✅ Evento para agregar producto al carrito
     // const btnComprar = card.querySelector(".btn-comprar");

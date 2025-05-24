@@ -4,20 +4,27 @@ const productos = [
     titulo: "Labial Mate Intenso",
     descripcion: "Color vibrante y duradero, ideal para todo el día.",
     precio: 2500,
-    descuento: 20,                // opcional
     categoria: "Maquillaje",
     img: "../img/placeholder.jpg",
-    stock: 10
+    stock: 0,
+    alt: "Labial Mate Intenso",   // opcional
+    estado: "nuevo",               // opcional
+    cupon: "DESCUENTO20",         // opcional
+    etiqueta: "NUEVO",            // opcional
+    descuento: 20            // opcional
   },
   {
     id: 2,
     titulo: "Crema Hidratante Facial",
     descripcion: "Con ácido hialurónico para una piel más suave.",
     precio: 4800,
-    descuento: 15,                // opcional
     categoria: "Cuidado facial",
     img: "../img/placeholder.jpg",
-    stock: 2
+    stock: 3,
+    descuento: 15,                // opcional
+    etiqueta: "OFERTA",          // opcional
+    estado: "NUEVO",           // opcional
+    cupon: "OFERTA15",         // opcional
 
   },
   {
@@ -25,10 +32,13 @@ const productos = [
     titulo: "Perfume Floral Sensation",
     descripcion: "Aromas suaves con notas florales y frescas.",
     precio: 7200,
-    descuento: 15, 
     categoria: "Fragancias",
     img: "../img/placeholder.jpg",
-    stock: 10
+    stock: 10,
+    descuento: 15,           // opcional
+    etiqueta: "OFERTA",     // opcional
+    estado: "NUEVO",      // opcional
+    cupon: "FRAG15",   // opcional
   },
   {
     id: 4,
