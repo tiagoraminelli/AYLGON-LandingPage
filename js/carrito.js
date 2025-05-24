@@ -158,7 +158,7 @@ document.getElementById("comprarBtn").addEventListener("click", () => {
   mensaje += "%0A¿Me podrías confirmar disponibilidad y forma de pago? 🙏";
 
   // Número de teléfono (con código de país sin +)
-  const telefono = "+5493408433314"; // Cambiá este número
+  const telefono = "+5493408674715"; // Cambiá este número
 
 
 

@@ -69,7 +69,7 @@ comprarBtn.addEventListener('click', () => {
   const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
   if (carrito.length === 0) return;
 
-  const numero = '5493408402912'; // Reemplazá por tu número real
+  const numero = '5493408674715'; // Reemplazá por tu número real
 
   // Agrupar productos por título
   const conteo = {};
