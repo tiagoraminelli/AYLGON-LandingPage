@@ -51,21 +51,62 @@ function actualizarModalCarrito() {
   });
 
   // Mostrar productos agrupados
-  Object.values(productosAgrupados).forEach((producto, index) => {
-    const item = document.createElement("div");
-    item.className = "d-flex justify-content-between align-items-center border-bottom py-2";
-    item.innerHTML = `
-      <div>
-        <img src="${producto.img}" alt="${producto.titulo}" class="img-thumbnail me-2" style="width: 50px;">
-        <strong>${producto.titulo}</strong> x${producto.cantidad}<br>
-        <small class="text-muted">${producto.precio}</small>
+Object.values(productosAgrupados).forEach((producto) => {
+  const item = document.createElement("div");
+  item.className = "d-flex flex-column flex-md-row align-items-start gap-3 border-bottom py-3";
+
+  item.innerHTML = `
+    <img src="${producto.img}" alt="${producto.titulo}" class="rounded" style="width: 80px; height: auto; object-fit: cover;">
+
+    <div class="flex-grow-1">
+      <h6 class="fw-semibold mb-1 text-dark">${producto.titulo}</h6>
+      <div class="d-flex align-items-center gap-2 mb-2">
+  <button class="btn btn-sm btn-outline-secondary" onclick="modificarCantidad('${producto.titulo}', -1)">–</button>
+  <span class="fw-semibold">cant: ${producto.cantidad}</span>
+  <button class="btn btn-sm btn-outline-secondary" onclick="modificarCantidad('${producto.titulo}', 1)">+</button>
+</div>
+
+      <div class="d-flex align-items-center gap-2">
+        ${producto.precioOriginal ? `
+          <span class="text-muted text-decoration-line-through small">$${producto.precioOriginal}</span>
+          <span class="badge bg-danger small">-${producto.descuento}%</span>
+        ` : ""}
+        <span class="fw-bold text-dark">$${producto.precio}</span>
       </div>
-      <button class="btn btn-sm btn-danger" onclick="eliminarProducto('${producto.titulo}')">
-        <i class="bi bi-trash"></i>
-      </button>
-    `;
-    contenedor.appendChild(item);
-  });
+    </div>
+
+    <button class="btn btn-outline-danger btn-sm ms-auto" onclick="eliminarProducto('${producto.titulo}')">
+      <i class="bi bi-trash"></i>
+    </button>
+  `;
+
+  contenedor.appendChild(item);
+});
+}
+
+
+function modificarCantidad(titulo, cambio) {
+  // Recorremos desde el final para evitar errores al eliminar
+  for (let i = carritoDeCompra.length - 1; i >= 0; i--) {
+    if (carritoDeCompra[i].titulo === titulo) {
+      if (cambio > 0) {
+        // Verificar stock actual
+        const cantidadActual = carritoDeCompra.filter(p => p.titulo === titulo).length;
+        if (cantidadActual < carritoDeCompra[i].stock) {
+          carritoDeCompra.push({ ...carritoDeCompra[i] });
+        }
+      } else if (cambio < 0) {
+        // Evitar que quede menos de uno
+        const cantidadActual = carritoDeCompra.filter(p => p.titulo === titulo).length;
+        if (cantidadActual > 1) {
+          carritoDeCompra.splice(i, 1);
+        }
+      }
+      break;
+    }
+  }
+
+  actualizarBotonCarrito();
 }
 
 

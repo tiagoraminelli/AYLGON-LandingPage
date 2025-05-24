@@ -60,14 +60,52 @@ function renderProductos(lista, desde = 0, hasta = cantidadPorPagina) {
   }
 }
 
+
+const filtrosCategorias = document.getElementById("filtrosCategorias");
+
+function generarFiltrosCategorias() {
+  const conteo = {};
+
+  productos.forEach(p => {
+    conteo[p.categoria] = (conteo[p.categoria] || 0) + 1;
+  });
+
+  // "Todos" como opción por defecto
+  let html = `
+    <div class="form-check">
+      <input class="form-check-input filtro-categoria" type="radio" name="categoria" id="catTodos" value="todos" checked>
+      <label class="form-check-label" for="catTodos">Todos (${productos.length})</label>
+    </div>
+  `;
+
+  for (const [categoria, cantidad] of Object.entries(conteo)) {
+    const id = "cat" + categoria.replace(/\s/g, '');
+    html += `
+      <div class="form-check">
+        <input class="form-check-input filtro-categoria" type="radio" name="categoria" id="${id}" value="${categoria}">
+        <label class="form-check-label" for="${id}">${categoria} (${cantidad})</label>
+      </div>
+    `;
+  }
+
+  filtrosCategorias.innerHTML = html;
+
+  // Listeners para nuevas categorías
+  document.querySelectorAll(".filtro-categoria").forEach(el => el.addEventListener("change", filtrar));
+}
+
 function filtrar() {
-  const categoria = categoriaSelect.value;
+  const categoriaSeleccionada = document.querySelector(".filtro-categoria:checked").value;
   const precio = parseInt(precioMax.value);
+  const soloStock = document.getElementById("switchStock").checked;
 
   productosFiltrados = productos.filter(p =>
-    (categoria === "todos" || p.categoria === categoria) &&
-    p.precio <= precio
+    (categoriaSeleccionada === "todos" || p.categoria === categoriaSeleccionada) &&
+    p.precio <= precio &&
+    (!soloStock || p.stock > 0)
   );
+
+  contenedor.innerHTML = '';
 
   if (productosFiltrados.length === 0) {
     contenedor.innerHTML = '<p class="no-result">No se encontraron productos que coincidan con los filtros.</p>';
@@ -75,21 +113,20 @@ function filtrar() {
     return;
   }
 
-  contenedor.innerHTML = '';
   productosMostrados = 0;
   renderProductos(productosFiltrados, 0, cantidadPorPagina);
 }
 
-categoriaSelect.addEventListener("change", filtrar);
+// Eventos iniciales
 precioMax.addEventListener("input", () => {
   precioMaxValor.textContent = `$${precioMax.value.toLocaleString()}`;
   filtrar();
 });
+document.getElementById("switchStock").addEventListener("change", filtrar);
 
-botonMostrarMas.addEventListener("click", () => {
-  renderProductos(productosFiltrados, productosMostrados, productosMostrados + cantidadPorPagina);
-});
 
 // Inicial
 productosFiltrados = productos;
+generarFiltrosCategorias();
 renderProductos(productosFiltrados, 0, cantidadPorPagina);
+

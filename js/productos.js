@@ -4,6 +4,7 @@ const productos = [
     titulo: "Labial Mate Intenso",
     descripcion: "Color vibrante y duradero, ideal para todo el día.",
     precio: 2500,
+    descuento: 20,                // opcional
     categoria: "Maquillaje",
     img: "../img/placeholder.jpg",
     stock: 10
