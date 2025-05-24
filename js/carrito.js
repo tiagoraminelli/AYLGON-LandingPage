@@ -117,19 +117,9 @@ document.getElementById("comprarBtn").addEventListener("click", () => {
   mensaje += "%0A¿Me podrías confirmar disponibilidad y forma de pago? 🙏";
 
   // Número de teléfono (con código de país sin +)
-  const telefono = "+549"; // Cambiá este número
+  const telefono = "+5493408433314"; // Cambiá este número
 
-  if (!(telefono) || telefono.trim() === "") {
-    // Si no hay número de teléfono, mostrar un mensaje de error
-    alert("No se ha configurado un número de teléfono para WhatsApp.");
-    return;
-  }
 
-  if (telefono.length < 10) {
-    // Si el número de teléfono es demasiado corto, mostrar un mensaje de error
-    alert("El número de teléfono es demasiado corto por lo tanto es invalido.");
-    return;
-  }
 
   // Redirección a WhatsApp
   const url = `https://wa.me/${telefono}?text=${mensaje}`;
