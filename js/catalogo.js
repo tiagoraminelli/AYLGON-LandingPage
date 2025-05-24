@@ -18,7 +18,7 @@ function renderProductos(lista, desde = 0, hasta = cantidadPorPagina) {
     const card = document.createElement("div");
     card.className = "producto-card";
     card.innerHTML = `
-      <img src="${producto.img}" alt="${(producto.titulo)}" />
+      <img href="#" src="${producto.img}" alt="${(producto.titulo)}" />
       <h3>${producto.titulo.toUpperCase()}</h3>
       <p class="descripcion">${producto.descripcion}</p>
       <p class="categoria">${producto.categoria}</p>
@@ -129,4 +129,12 @@ document.getElementById("switchStock").addEventListener("change", filtrar);
 productosFiltrados = productos;
 generarFiltrosCategorias();
 renderProductos(productosFiltrados, 0, cantidadPorPagina);
+botonMostrarMas.addEventListener("click", () => {
+  renderProductos(
+    productosFiltrados,
+    productosMostrados,
+    productosMostrados + cantidadPorPagina
+  );
+});
+
 

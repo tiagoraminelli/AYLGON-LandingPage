@@ -14,14 +14,18 @@ const productos = [
     titulo: "Crema Hidratante Facial",
     descripcion: "Con ácido hialurónico para una piel más suave.",
     precio: 4800,
+    descuento: 15,                // opcional
     categoria: "Cuidado facial",
-    img: "../img/placeholder.jpg"
+    img: "../img/placeholder.jpg",
+    stock: 2
+
   },
   {
     id: 3,
     titulo: "Perfume Floral Sensation",
     descripcion: "Aromas suaves con notas florales y frescas.",
     precio: 7200,
+    descuento: 15, 
     categoria: "Fragancias",
     img: "../img/placeholder.jpg",
     stock: 10
@@ -32,7 +36,9 @@ const productos = [
     descripcion: "Brillo duradero y secado rápido.",
     precio: 1800,
     categoria: "Uñas",
-    img: "../img/placeholder.jpg"
+    img: "../img/placeholder.jpg",
+    stock: 10,
+    descuento: 10
   },
   {
     id: 5,
@@ -41,16 +47,18 @@ const productos = [
     precio: 3500,
     categoria: "Cabello",
     img: "../img/placeholder.jpg",
-    stock: 10
-  }
-    ,
+    stock: 10,
+    descuento: 10
+  },
     {
         id: 6,
         titulo: "Sombra de Ojos Mate",
         descripcion: "Colores intensos y larga duración.",
         precio: 2200,
         categoria: "Maquillaje",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 12,
+        descuento: 0
     },
     {
         id: 7,
@@ -59,7 +67,8 @@ const productos = [
         precio: 3000,
         categoria: "Cuidado corporal",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 2,
+        descuento: 0
     },
     {
         id: 8,
@@ -67,7 +76,9 @@ const productos = [
         descripcion: "Limpieza suave y efectiva para el rostro.",
         precio: 2800,
         categoria: "Cuidado facial",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 7,
+        descuento: 25
     },
     {
         id: 9,
@@ -76,7 +87,8 @@ const productos = [
         precio: 1500,
         categoria: "Fragancias",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 5,
+        descuento: 5
     },
     {
         id: 10,
@@ -84,7 +96,9 @@ const productos = [
         descripcion: "Suavidad y brillo para el cabello.",
         precio: 3200,
         categoria: "Cabello",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 2,
+        descuento: 0
     },
     {
         id: 11,
@@ -93,7 +107,8 @@ const productos = [
         precio: 4000,
         categoria: "Maquillaje",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 1,
+        descuento: 0
     },
     {
         id: 12,
@@ -102,7 +117,8 @@ const productos = [
         precio: 3500,
         categoria: "Cuidado corporal",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 6,
+        descuento: 0
     },
     {
         id: 13,
@@ -110,7 +126,9 @@ const productos = [
         descripcion: "Protección efectiva sin químicos agresivos.",
         precio: 2000,
         categoria: "Cuidado corporal",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 5,
+        descuento: 0
     },
     {
         id: 14,
@@ -119,7 +137,8 @@ const productos = [
         precio: 3500,
         categoria: "Maquillaje",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 2,
+        descuento: 70
     },
     {
         id: 15,
@@ -127,7 +146,9 @@ const productos = [
         descripcion: "Refresca y tonifica la piel al instante.",
         precio: 2700,
         categoria: "Cuidado facial",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 5,
+        descuento: 60
     },
     {
         id: 16,
@@ -136,7 +157,8 @@ const productos = [
         precio: 7200,
         categoria: "Fragancias",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 10,
+        descuento: 0
     },
     {
         id: 17,
@@ -144,7 +166,9 @@ const productos = [
         descripcion: "Brillo duradero y secado rápido.",
         precio: 1800,
         categoria: "Uñas",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 10,
+        descuento: 0
     },
     {
         id: 18,
@@ -153,7 +177,8 @@ const productos = [
         precio: 3500,
         categoria: "Cabello",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 10,
+        descuento: 0
     },
     {
         id: 19,
@@ -162,7 +187,8 @@ const productos = [
         precio: 2200,
         categoria: "Maquillaje",
         img: "../img/placeholder.jpg",
-        stock: 12
+        stock: 12,
+        descuento: 0
     },
     {
         id: 20,
@@ -170,7 +196,9 @@ const productos = [
         descripcion: "Hidratación profunda para todo tipo de piel.",
         precio: 3000,
         categoria: "Cuidado corporal",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 2,
+        descuento: 0
     },
     {
         id: 21,
@@ -179,7 +207,8 @@ const productos = [
         precio: 2800,
         categoria: "Cuidado facial",
         img: "../img/placeholder.jpg",
-        stock: 10
+        stock: 10,
+        descuento: 0
     },
     {
         id: 22,
@@ -187,7 +216,9 @@ const productos = [
         descripcion: "Relajante y calmante, ideal para aromaterapia.",
         precio: 1500,
         categoria: "Fragancias",
-        img: "../img/placeholder.jpg"
+        img: "../img/placeholder.jpg",
+        stock: 5,
+        descuento: 0
     },
     {
         id: 23,
@@ -195,7 +226,19 @@ const productos = [
         descripcion: "Suavidad y brillo para el cabello.",
         precio: 3200,
         categoria: "Cabello",
-        img: "../img/placeholder.jpg"
-    }
+        img: "../img/placeholder.jpg",
+        stock: 2,
+        descuento: 0
+    },
+    {
+        id: 24,
+        titulo: "Sombra de Ojos Mate",
+        descripcion: "Colores intensos y larga duración.",
+        precio: 2200,
+        categoria: "Ojometria",
+        img: "../img/placeholder.jpg",
+        stock: 12,
+        descuento: 85
+    },
 
 ];

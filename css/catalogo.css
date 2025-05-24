@@ -10,25 +10,23 @@ body {
   color: #6f42c1;
 }
 
-/* 🆕 Tamaño fijo y centrado del layout */
 .layout {
   display: flex;
   gap: 1rem;
-  padding: 100px 2rem 2rem; /* espacio para el navbar fijo */
+  padding: 100px 2rem 2rem;
 }
 
-/* Filtros del catálogo */
+/* Filtros */
 .filtros {
   flex: 0 0 250px;
   background: #fff;
   border-right: 1px solid #ddd;
   padding: 1rem;
-  height: fit-content;
   position: sticky;
-  top: 100px; /* igual al padding-top de .layout para evitar superposición con navbar */
+  top: 100px;
+  height: fit-content;
   z-index: 1000;
 }
-
 
 .filtros h3 {
   font-size: 1.2rem;
@@ -49,12 +47,10 @@ body {
 .filtro input[type="range"] {
   width: 100%;
   padding: 5px;
-  
 }
 
-/* Estilo general */
+/* Slider Precio */
 #precioMax {
-  /* -webkit-appearance: none; */
   width: 100%;
   height: 8px;
   background: #ddd;
@@ -63,57 +59,33 @@ body {
   transition: background 0.3s;
 }
 
-/* Línea cuando se pasa el mouse */
 #precioMax:hover {
   background: #ccc;
 }
 
-/* Track (la línea de fondo) */
-#precioMax::-webkit-slider-runnable-track {
-  height: 8px;
-  background: #e0d4f7;
-  border-radius: 5px;
-}
-
+#precioMax::-webkit-slider-runnable-track,
 #precioMax::-moz-range-track {
   height: 8px;
   background: #e0d4f7;
   border-radius: 5px;
 }
 
-/* Thumb (la bolita) */
-#precioMax::-webkit-slider-thumb {
-  -webkit-appearance: none;
+#precioMax::-webkit-slider-thumb,
+#precioMax::-moz-range-thumb {
   appearance: none;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background: #9c27b0;
   cursor: pointer;
-  margin-top: -6px; /* Centrado vertical */
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  transition: background 0.3s;
+  margin-top: -6px;
 }
 
-#precioMax::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #9c27b0;
-  cursor: pointer;
-  border: none;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-}
-
-/* Estilo al hacer focus */
-#precioMax:focus::-webkit-slider-thumb {
-  background: #7b1fa2;
-}
-
+#precioMax:focus::-webkit-slider-thumb,
 #precioMax:focus::-moz-range-thumb {
   background: #7b1fa2;
 }
-
 
 #precioMaxValor {
   display: block;
@@ -122,7 +94,7 @@ body {
   font-weight: bold;
 }
 
-/* Contenido principal del catálogo */
+/* Catálogo */
 .catalogo {
   flex: 1;
 }
@@ -131,41 +103,29 @@ body {
   font-size: 2rem;
   margin-bottom: 20px;
   text-align: center;
-  background: linear-gradient(90deg, #c084fc, #9333ea); /* degradado violeta */
+  background: linear-gradient(90deg, #c084fc, #9333ea);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 
-
-/* 🆕 Limitamos ancho máximo y centramos cards */
+/* Grid Productos */
 .productos-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 
+/* Tarjeta de producto */
 .producto-card {
   background: #fff;
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.3s ease;
 }
-
-.btn-outline-purple {
-  border: 2px solid #7b2cbf;
-  color: #7b2cbf;
-  background-color: white;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-purple:hover {
-  background-color: #7b2cbf;
-  color: white;
-}
-
 
 .producto-card:hover {
   transform: translateY(-5px);
@@ -188,14 +148,6 @@ body {
   color: #666;
 }
 
-.no-result{
-  text-align: center;
-  font-size: 1.5rem;
-  color: #6f42c1;
-  margin-top: 50px;
-
-}
-
 .categoria {
   font-size: 0.85rem;
   color: #fd7e14;
@@ -207,23 +159,11 @@ body {
   margin: 10px 0;
 }
 
-.stock{
+.stock {
   font-size: 0.9rem;
   color: #28a745;
   margin-bottom: 10px;
 }
-
-.btn-purple {
-  background-color: #6f42c1;
-  color: white;
-  border: none;
-}
-
-.btn-purple:hover {
-  background-color: #5a33a4;
-  color: white;
-}
-
 
 .btn-comprar {
   background-color: #9c27b0;
@@ -239,19 +179,67 @@ body {
   background-color: #7b1fa2;
 }
 
+/* Botón mostrar más */
+#mostrarMasBtn {
+  display: block;
+  margin: 2rem auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Estilo botón */
+.btn-outline-purple {
+  border: 2px solid #7b2cbf;
+  color: #7b2cbf;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-purple:hover {
+  background-color: #7b2cbf;
+  color: white;
+}
+
+.btn-purple {
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+}
+
+.btn-purple:hover {
+  background-color: #5a33a4;
+  color: white;
+}
+
+.no-result {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #6f42c1;
+  margin-top: 50px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
+    padding: 80px 1rem 2rem;
   }
 
   .filtros {
     border-right: none;
     border-bottom: 1px solid #ddd;
-    min-height: auto;
     width: 100%;
   }
 
   .productos-container {
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  #mostrarMasBtn {
+    width: 100%;
+    max-width: 250px;
   }
 }

@@ -67,14 +67,14 @@ Object.values(productosAgrupados).forEach((producto) => {
 </div>
 
       <div class="d-flex align-items-center gap-2">
-        ${producto.precioOriginal ? `
-          <span class="text-muted text-decoration-line-through small">$${producto.precioOriginal}</span>
+        ${producto.precio ? `
+          <span class="text-muted text-decoration-line-through small">$${producto.precio}</span>
           <span class="badge bg-danger small">-${producto.descuento}%</span>
         ` : ""}
-        <span class="fw-bold text-dark">$${producto.precio}</span>
+        <span class="fw-bold text-dark">${+producto.precio * (1 - producto.descuento / 100) * producto.cantidad }</span>
       </div>
+      
     </div>
-
     <button class="btn btn-outline-danger btn-sm ms-auto" onclick="eliminarProducto('${producto.titulo}')">
       <i class="bi bi-trash"></i>
     </button>
